@@ -10,7 +10,7 @@ Yanis Sebastian Zuercher & Dominik Koenitzer
 - Kurze Beschreibung des Projekts und der Ziele
 ## Planung
 ### Netzwerkplan
-![netzwerkdiagram](docs/images/Netzwerkdiagram.drawio.png)
+![netzwerkdiagram](images/Netzwerkdiagram.drawio.png)
 ### Adressplanung (Tabellenform)
 <table border="1">
     <tr>
