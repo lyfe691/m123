@@ -247,8 +247,8 @@ Im VirtualBox Manager auf "Neu" geklickt, um eine neue virtuelle Maschine zu ers
 ![VM_Installation_Anleitung](images/vm_installation/15.png)
 
 
-# Einrichtung der Dienste
-- **DHCP-Server:**
+## Einrichtung der Dienste
+ ### DHCP-Server
   - Installationsschritte mit Screenshots
   - Konfiguration des DHCP-Bereichs
   - Ausschlüsse und Reservierungen
