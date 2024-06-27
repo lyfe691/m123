@@ -169,7 +169,7 @@ Im VirtualBox Manager auf "Neu" geklickt, um eine neue virtuelle Maschine zu ers
 
 **Schritt 4:** Virtuelle Festplatte erstellen
 
-- Festplattengröße: 120 GB
+- Festplattengrösse: 120 GB
 
 ![VM_Installation_Anleitung](images/vm_installation/4.png)
 <hr>
