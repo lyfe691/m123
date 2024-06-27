@@ -129,17 +129,17 @@ Yanis Sebastian Zuercher & Dominik Koenitzer
   - Laptops: Laptop01, Laptop02, Laptop03, Laptop04, Laptop05
   
 - **Benutzerkonten:**
-  - Benutzer01: Max Mustermann
-  - Benutzer02: Erika Musterfrau
-  - Benutzer03: Hans Müller
-  - Benutzer04: Lisa Meier
-  - Benutzer05: Paul Schmidt
-  - Benutzer06: Laura Becker
-  - Benutzer07: Klaus Schulze
-  - Benutzer08: Julia Fischer
-  - Benutzer09: Peter Hoffmann
-  - Benutzer10: Anna Wagner
-  - Admin: Administrator
+  - Benutzer01: Jason Bichsel
+  - Benutzer02: Benicio Von Felten
+  - Benutzer03: Dominik Könitzer
+  - Benutzer04: Perret Pascal
+  - Benutzer05: Amza Fatlum
+  - Benutzer06: Narcisa Knott
+  - Benutzer07: Thomas Waelti
+  - Benutzer08: Aleksandar Travanov
+  - Benutzer09: Marc Bahnmüller
+  - Benutzer10: Patrick Meier
+  - Admin: Yanis Sebastian Zürcher
 ## Installation des Windows Server 2019 in einer VM
 **Schritt 1:** Neue VM erstellen
 
