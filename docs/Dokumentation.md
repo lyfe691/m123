@@ -141,8 +141,112 @@ Yanis Sebastian Zuercher & Dominik Koenitzer
   - Benutzer10: Anna Wagner
   - Admin: Administrator
 ## Installation des Windows Server 2019 in einer VM
-- Grundkonfiguration (Hostname, Zeitzone, Netzwerkverbindungen)
-- Schritt-für-Schritt-Anleitung mit Screenshots
+**Schritt 1:** Neue VM erstellen
+
+Im VirtualBox Manager auf "Neu" geklickt, um eine neue virtuelle Maschine zu erstellen.
+
+![VM_Installation_Anleitung](images/vm_installation/1.png)
+<hr>
+
+**Schritt 2:** VM konfigurieren
+
+- Name: Windows Server 2019
+- Speicherort der VM angegeben
+- ISO-Datei für Windows Server 2019 ausgewählt
+- "Unattended Installation überspringen" aktiviert
+
+![VM_Installation_Anleitung](images/vm_installation/2.png)
+<hr>
+
+**Schritt 3:** Hardware konfigurieren
+
+- RAM zugewiesen: 14662 MB
+- CPUs zugewiesen: 12
+- Es sollte im grünen Bereich sein, wie im Bild dargestellt.
+
+![VM_Installation_Anleitung](images/vm_installation/3.png)
+<hr>
+
+**Schritt 4:** Virtuelle Festplatte erstellen
+
+- Festplattengröße: 120 GB
+
+![VM_Installation_Anleitung](images/vm_installation/4.png)
+<hr>
+
+**Schritt 5:** VM-Einstellungen überprüfen und erstellen
+
+- Einstellungen überprüft und auf "Fertigstellen" geklickt
+
+![VM_Installation_Anleitung](images/vm_installation/5.png)
+<hr>
+
+**Schritt 6:** VM starten
+
+- Windows Server 2019 VM ausgewählt und auf "Starten" geklickt
+
+![VM_Installation_Anleitung](images/vm_installation/6.png)
+<hr>
+
+**Schritt 7:** Windows Setup starten
+
+- Sprache, Zeit- und Währungsformat und Tastaturlayout ausgewählt
+- Auf "Jetzt installieren" geklickt
+
+![VM_Installation_Anleitung](images/vm_installation/7.png)
+
+![VM_Installation_Anleitung](images/vm_installation/8.png)
+<hr>
+
+**Schritt 8:** Betriebssystem auswählen
+
+- Edition: Windows Server 2019 Standard Evaluation (Desktop Experience) ausgewählt
+
+![VM_Installation_Anleitung](images/vm_installation/9.png)
+<hr>
+
+**Schritt 9:** Lizenzbedingungen akzeptieren
+
+- Lizenzbedingungen akzeptiert
+
+![VM_Installation_Anleitung](images/vm_installation/10.png)
+<hr>
+
+**Schritt 10:** Installationsart auswählen
+
+- "Benutzerdefiniert: Nur Windows installieren (erweitert)" ausgewählt
+
+![VM_Installation_Anleitung](images/vm_installation/11.png)
+<hr>
+
+**Schritt 11:** Laufwerk zur Installation auswählen
+
+- Nicht zugewiesenen Speicherplatz (120 GB) ausgewählt und auf "Weiter" geklickt
+
+![VM_Installation_Anleitung](images/vm_installation/12.png)
+<hr>
+
+**Schritt 12:** Windows installieren
+
+- Installationsprozess gestartet, Fortschritt verfolgt
+
+![VM_Installation_Anleitung](images/vm_installation/13.png)
+<hr>
+
+**Schritt 13:** Administrator-Konto einrichten
+
+- Passwort für das Administratorkonto festgelegt
+
+![VM_Installation_Anleitung](images/vm_installation/14.png)
+<hr>
+
+**Schritt 14:** Windows Setup abschließen
+
+- Nach Abschluss des Setups, Anmeldebildschirm erreicht
+
+![VM_Installation_Anleitung](images/vm_installation/15.png)
+
+
 # Einrichtung der Dienste
 - **DHCP-Server:**
   - Installationsschritte mit Screenshots
