@@ -1,5 +1,5 @@
 # Fallstudie WISS Modul 123
-Yanis Sebastian Zuercher & Dominik Koenitzer
+Yanis Sebastian Zuercher 
 
 26.06.24
 
