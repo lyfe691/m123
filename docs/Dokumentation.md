@@ -395,11 +395,178 @@ Ich habe eine Reservierung für `Laptop05` mit der IP-Adresse `192.168.1.104` un
 
 
   
-- **DNS-Server:**
-  - Installationsschritte mit Screenshots
-  - Konfiguration der Forward Lookup Zone und Reverse Lookup Zone
-  - Erstellen von DNS-Einträgen
-  - Tests und Ergebnisse
+## DNS-Server
+#### Installationsschritte:
+
+**Schritt 1:** Öffnen des Server Managers
+
+Im Server Manager habe ich auf "Add roles and features" geklickt, um die Rolle des DNS-Servers hinzuzufügen.
+
+![1](images/dns/1.png)
+<hr>
+
+**Schritt 2:** DNS-Server Rolle auswählen
+
+Ich habe die Rolle "DNS Server" ausgewählt und installiert.
+
+![2](images/dns/2.png)
+<hr>
+
+**Schritt 3:** DNS-Manager öffnen
+
+Nach der Installation habe ich im Server Manager auf "Tools" geklickt und dann "DNS" ausgewählt.
+
+![3](images/dns/3.png)
+<hr>
+
+**Schritt 4:** Neue Zone hinzufügen
+
+Im DNS-Manager habe ich auf "Forward Lookup Zones" rechtsgeklickt und "New Zone..." ausgewählt.
+
+![4](images/dns/4.png)
+<hr>
+
+**Schritt 5:** Zonentyp auswählen
+
+Ich habe "Primary zone" ausgewählt.
+
+![5](images/dns/6.png)
+<hr>
+
+**Schritt 6:** Zonenname eingeben
+
+Ich habe den Zonennamen "test.local" eingegeben.
+
+![6](images/dns/7.png)
+<hr>
+
+**Schritt 7:** Zonen-Datei erstellen
+
+Ich habe ausgewählt, eine neue Zonen-Datei zu erstellen mit dem Namen "test.local.dns".
+
+![7](images/dns/8.png)
+<hr>
+
+**Schritt 8:** Dynamische Updates konfigurieren
+
+Ich habe ausgewählt, dass keine dynamischen Updates erlaubt sind.
+
+![8](images/dns/9.png)
+<hr>
+
+**Schritt 9:** Assistent beenden
+
+Ich habe den Assistenten gefinished.
+
+![9](images/dns/10.png)
+<hr>
+
+**Schritt 10:** Reverse Lookup Zone hinzufügen
+
+Im DNS-Manager habe ich auf "Reverse Lookup Zones" rechtsgeklickt und "New Zone..." ausgewählt.
+
+![10](images/dns/11.png)
+<hr>
+
+**Schritt 11:** Zonentyp auswählen
+
+Ich habe "Primary zone" ausgewählt.
+
+![11](images/dns/12.png)
+<hr>
+
+**Schritt 12:** IPv4 Reverse Lookup Zone auswählen
+
+Ich habe "IPv4 Reverse Lookup Zone" ausgewählt.
+
+![12](images/dns/13.png)
+<hr>
+
+**Schritt 13:** Reverse Lookup Zone Name eingeben
+
+Ich habe den Namen der Reverse Lookup Zone als "0.1.168.192.in-addr.arpa" eingegeben.
+
+![13](images/dns/14.png)
+<hr>
+
+**Schritt 14:** Zonen-Datei erstellen
+
+Ich habe ausgewählt, eine neue Zonen-Datei zu erstellen mit dem Namen "0.1.168.192.in-addr.arpa.dns".
+
+![14](images/dns/15.png)
+<hr>
+
+**Schritt 15:** Dynamische Updates konfigurieren
+
+Ich habe ausgewählt, dass keine dynamischen Updates erlaubt sind.
+
+![15](images/dns/16.png)
+<hr>
+
+**Schritt 16:** Assistent beenden
+
+Ich habe den Assistenten gefinished.
+
+![16](images/dns/17.png)
+<hr>
+
+#### Erstellen von DNS-Einträgen
+
+**Schritt 1:** Neuen Host hinzufügen
+
+Im DNS-Manager habe ich auf die Forward Lookup Zone "test.local" rechtsgeklickt und "New Host (A or AAAA)..." ausgewählt.
+
+![17](images/dns/18.png)
+<hr>
+
+**Schritt 2:** Host für Hauptserver hinzufügen
+
+Ich habe einen neuen Host "Hauptserver" mit der IP-Adresse "192.168.1.10" hinzugefügt.
+
+![18](images/dns/19.png)
+<hr>
+
+**Schritt 3:** Host für BackupServer hinzufügen
+
+Ich habe einen neuen Host "BackupServer" mit der IP-Adresse "192.168.1.20" hinzugefügt.
+
+![19](images/dns/20.png)
+<hr>
+
+**Schritt 4:** Host für Drucker hinzufügen
+
+Ich habe einen neuen Host "Drucker01" mit der IP-Adresse "192.168.1.30" hinzugefügt.
+![20](images/dns/21.png)
+<hr>
+
+**Schritt 5:** Host für Laptop01 hinzufügen
+
+Ich habe einen neuen Host "Laptop01" mit der IP-Adresse "192.168.1.100" hinzugefügt.
+
+![21](images/dns/22.png)
+<hr>
+
+**Schritt 6:** Host für Laptop02 hinzufügen
+
+Ich habe einen neuen Host "Laptop02" mit der IP-Adresse "192.168.1.101" hinzugefüt.
+
+![22](images/dns/23.png)
+<hr>
+
+**Schritt 7:** Host für Laptop03 hinzufügen
+
+Ich habe einen neuen Host "Laptop03" mit der IP-Adresse "192.168.1.102" hinzugefügt.
+![23](images/dns/24.png)
+<hr>
+
+#### Übersicht der DNS-Einträge
+
+Hier ist die Übersicht der erstellten DNS-Einträge:
+
+![24](images/dns/25.png)
+<hr>
+
+
   
 - **Datei- und Druckdienste:**
   - Installationsschritte mit Screenshots
