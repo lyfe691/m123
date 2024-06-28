@@ -1022,7 +1022,9 @@ Der Test umfasst die Überprüfung der folgenden Punkte:
 Während des Tests stellte ich fest, dass die Reverse Lookup Zone nicht korrekt funktionierte und keine PTR-Einträge auflöste. Nach Überprüfung der Konfiguration stellte ich fest, dass die Zone nicht korrekt erstellt wurde. Ich habe die Reverse Lookup Zone neu erstellt und die PTR-Einträge hinzugefügt. Anschliessend funktionierte die Reverse DNS-Auflösung einwandfrei.
 
 <hr>
+
 ## DHCP
+
 ### Testkonzept für den DHCP-Server
 
 #### 1. Testziel
