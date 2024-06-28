@@ -2,9 +2,43 @@
 
 - Yanis Sebastian Zuercher & Dominik Koenitzer
 - 26.06.24
-
+## Rollen
+- **Yanis Sebastian Zuercher**
+    - Dokumentation
+    - Bilder
+    - VM aufsetzen
+    - DHCP, DNS, IIS, Print & Benutzerfreigabe aufsetzen
+- **Dominik Könitzer**
+    - Tests durchführen & Fehlerbehebung
 ## Inhaltsverzeichnis
-- Übersicht der Kapitel und Seitenzahlen
+- [Einführung](#einführung)
+- [Planung](#planung)
+  - [Netzwerkplan](#netzwerkplan)
+  - [Adressplanung (Tabellenform)](#adressplanung-tabellenform)
+  - [Berechtigungsmatrix](#berechtigungsmatrix)
+  - [Namenskonzepte](#namenskonzepte)
+- [Installation des Windows Server 2019 in einer VM](#installation-des-windows-server-2019-in-einer-vm)
+- [Einrichtung der Dienste](#einrichtung-der-dienste)
+  - [DHCP-Server](#dhcp-server)
+    - [Installationsschritte](#installationsschritte)
+    - [Ausschlüsse und Reservierungen](#ausschlüsse-und-reservierungen)
+  - [DNS-Server](#dns-server)
+    - [Installationsschritte](#installationsschritte-1)
+    - [Erstellen von DNS-Einträgen](#erstellen-von-dns-einträgen)
+  - [Datei- und Druckdienste](#datei--und-druckdienste)
+  - [Webinstallation (IIS)](#webinstallation-iis)
+    - [Installationsschritte](#installationsschritte-2)
+    - [Showcase](#showcase)
+- [Tests (Dominik Könitzer)](#tests-dominik-könitzer)
+  - [IIS](#iis)
+    - [Testkonzept für den IIS (Internet Information Services) Webserver](#testkonzept-für-den-iis-internet-information-services-webserver)
+  - [Drucker- und Benutzerfreigabe](#drucker--und-benutzerfreigabe)
+    - [Testkonzept für die Drucker- und Benutzerfreigabe](#testkonzept-für-die-drucker--und-benutzerfreigabe)
+  - [DNS](#dns)
+    - [Testkonzept für den DNS-Server](#testkonzept-für-den-dns-server)
+  - [DHCP](#dhcp)
+    - [Testkonzept für den DHCP-Server](#testkonzept-für-den-dhcp-server)
+
 
 ## Einführung
 - Kurze Beschreibung des Projekts und der Ziele
@@ -240,7 +274,7 @@ Im VirtualBox Manager auf "Neu" geklickt, um eine neue virtuelle Maschine zu ers
 ![VM_Installation_Anleitung](images/vm_installation/14.png)
 <hr>
 
-**Schritt 14:** Windows Setup abschließen
+**Schritt 14:** Windows Setup abschliessen
 
 - Nach Abschluss des Setups, Anmeldebildschirm erreicht
 
@@ -645,8 +679,12 @@ Im Server Manager habe ich auf "Add roles and features" geklickt. Und alle Schri
 
 ![img](images/druck-datei-freigaben/30.png)
 
+<hr>
+
 ###### Showcase der benutzer:
 ![img](images/druck-datei-freigaben/31.png)
+
+<hr>
 
 **Weiter mit Schritt 3:** File and Storage services
 ![img](images/druck-datei-freigaben/32.png)
@@ -698,6 +736,7 @@ Im Server Manager habe ich auf "Add roles and features" geklickt. Und alle Schri
 ![img](images/IIS/4.png)
 
 ![img](images/IIS/5.png)
+
 <hr>
 
 **Schritt 2:** IIS aufsetzen
@@ -712,6 +751,8 @@ Im Server Manager habe ich auf "Add roles and features" geklickt. Und alle Schri
 
 ![img](images/IIS/10.png)
 
+<hr>
+
 **Schritt 3:** Certificate
 
 ![img](images/IIS/11.png)
@@ -722,6 +763,338 @@ Im Server Manager habe ich auf "Add roles and features" geklickt. Und alle Schri
 
 ![img](images/IIS/14.png)
 
+<hr>
+
 **Showcase:**
 ![img](images/IIS/15.png)
 ![img](images/IIS/16.png)
+
+<hr>
+
+# Tests (Dominik Könitzer)
+## IIS
+### Testkonzept für den IIS (Internet Information Services) Webserver
+
+#### 1. Testziel
+Das Ziel meines Tests besteht darin sicherzustellen, dass der IIS-Webserver korrekt konfiguriert ist, HTTPS-Verbindungen unterstützt, die bereitgestellte Webseite zugänglich ist und die Sicherheitszertifikate ordnungsgemäss funktionieren.
+
+#### 2. Testumfang
+Der Test umfasst die Überprüfung der folgenden Punkte:
+- Zugänglichkeit der Webseite über HTTP und HTTPS
+- Korrektheit des installierten SSL-Zertifikats
+- Funktionsfähigkeit der Webseite auf verschiedenen Clients
+- Überprüfung der Sicherheitskonfiguration
+
+#### 3. Testumgebung
+- Webserver: Windows Server 2019 mit IIS-Rolle
+- Netzwerk: Lokales Netzwerk mit IP-Bereich 192.168.1.0/24
+- Test-Clients: Mehrere Clients (Laptops, Desktops) im Netzwerk
+- Webseite: Eine einfache HTML-Seite, die auf dem IIS gehostet wird
+- SSL-Zertifikat: Selbstsigniertes Zertifikat
+
+#### 4. Testfälle
+
+##### Testfall 1: Zugänglichkeit der Webseite über HTTP
+**Voraussetzung:**
+- Die Webseite ist auf dem IIS-Webserver bereitgestellt.
+- HTTP ist auf dem Webserver konfiguriert.
+
+**Schritte:**
+1. Ich öffne einen Webbrowser auf einem Client im Netzwerk.
+2. Ich gebe die IP-Adresse des Webservers mit dem HTTP-Protokoll ein ( `http://192.168.1.10`).
+
+**Erwartetes Ergebnis:**
+- Die Webseite wird korrekt im Browser angezeigt.
+
+##### Testfall 2: Zugänglichkeit der Webseite über HTTPS
+**Voraussetzung:**
+- Die Webseite ist auf dem IIS-Webserver bereitgestellt.
+- HTTPS ist auf dem Webserver konfiguriert und ein SSL-Zertifikat ist installiert.
+
+**Schritte:**
+1. Ich öffne einen Webbrowser auf einem Client im Netzwerk.
+2. Ich gebe die IP-Adresse des Webservers mit dem HTTPS-Protokoll ein (`https://192.168.1.10`).
+
+**Erwartetes Ergebnis:**
+- Die Webseite wird korrekt im Browser angezeigt.
+- Es erscheint ein Sicherheitshinweis bezüglich des selbstsignierten Zertifikats.
+
+##### Testfall 3: Überprüfung des SSL-Zertifikats
+**Voraussetzung:**
+- Ein SSL-Zertifikat ist auf dem Webserver installiert und konfiguriert.
+
+**Schritte:**
+1. Ich öffne die Webseite über HTTPS auf einem Webbrowser.
+2. Ich überprüfe die Zertifikatsinformationen im Browser.
+
+**Erwartetes Ergebnis:**
+- Das SSL-Zertifikat wird als selbstsigniert angezeigt.
+- Die Zertifikatsinformationen stimmen mit den konfigurierten Details überein.
+
+##### Testfall 4: Funktionsfähigkeit der Webseite auf verschiedenen Clients
+**Voraussetzung:**
+- Die Webseite ist auf dem IIS-Webserver bereitgestellt.
+
+**Schritte:**
+1. Ich öffne die Webseite auf verschiedenen Clients (Laptops, Desktops) im Netzwerk.
+2. Ich überprüfe, ob die Webseite auf allen Clients korrekt angezeigt wird.
+
+**Erwartetes Ergebnis:**
+- Die Webseite wird auf allen getesteten Clients korrekt angezeigt.
+
+##### Testfall 5: Überprüfung der Sicherheitskonfiguration
+**Voraussetzung:**
+- Der IIS-Webserver ist konfiguriert und läuft.
+
+**Schritte:**
+1. Ich überprüfe die Sicherheitseinstellungen im IIS-Manager.
+2. Ich stelle sicher, dass nur notwendige Protokolle und Ports geöffnet sind.
+3. Ich überprüfe die Protokollierung und Überwachungsfunktionen.
+
+**Erwartetes Ergebnis:**
+- Die Sicherheitskonfiguration ist korrekt eingerichtet und nur notwendige Protokolle und Ports sind aktiviert.
+
+#### 5. Fehlerbehebung
+
+Während des Tests stellte ich fest, dass die Webseite über HTTPS nicht erreichbar war. Nach Überprüfung der IIS-Konfiguration stellte ich fest, dass das SSL-Zertifikat nicht korrekt gebunden war. Ich habe das Zertifikat erneut gebunden und die Webseite war anschliessend über HTTPS erreichbar.
+
+<hr>
+
+## Drucker- und Benutzerfreigabe
+### Testkonzept für die Drucker- und Benutzerfreigabe
+
+#### 1. Testziel
+Das Ziel meines Tests besteht darin, sicherzustellen, dass der Druckserver ordnungsgemäss konfiguriert ist, Druckaufträge korrekt verarbeitet und die Benutzerfreigaben für Netzwerkressourcen wie Dateien und Ordner ordnungsgemäss funktionieren.
+
+#### 2. Testumfang
+Der Test umfasst die Überprüfung der folgenden Punkte:
+- Funktionalität des Druckservers
+- Druckaufträge von verschiedenen Clients
+- Überprüfung der Freigaben von Dateien und Ordnern
+- Zugriffsrechte der Benutzer auf freigegebene Ressourcen
+
+#### 3. Testumgebung
+- Druckserver: Windows Server 2019 mit konfiguriertem Druckdienst
+- Netzwerk: Lokales Netzwerk mit IP-Bereich 192.168.1.0/24
+- Test-Clients: Mehrere Clients (Laptops, Desktops) im Netzwerk
+- Freigegebene Ressourcen: Ordner und Dateien auf dem Server
+
+#### 4. Testfälle
+
+##### Testfall 1: Überprüfung der Druckserver-Funktionalität
+**Voraussetzung:**
+- Der Druckserver ist installiert und konfiguriert.
+- Ein Netzwerkdrucker ist hinzugefügt.
+
+**Schritte:**
+1. Ich starte den Druckserver.
+2. Ich konfiguriere einen Client, um den Netzwerkdrucker zu verwenden.
+
+**Erwartetes Ergebnis:**
+- Der Client kann Druckaufträge an den Netzwerkdrucker senden und diese werden korrekt gedruckt.
+
+##### Testfall 2: Druckaufträge von verschiedenen Clients
+**Voraussetzung:**
+- Der Druckserver ist installiert und konfiguriert.
+- Ein Netzwerkdrucker ist hinzugefügt.
+
+**Schritte:**
+1. Ich sende Druckaufträge von verschiedenen Clients an den Netzwerkdrucker.
+2. Ich überwache die Druckwarteschlange, um sicherzustellen, dass alle Aufträge korrekt verarbeitet werden.
+
+**Erwartetes Ergebnis:**
+- Alle Druckaufträge werden korrekt gedruckt und die Druckwarteschlange zeigt keine Fehler.
+
+##### Testfall 3: Überprüfung der Freigaben von Dateien und Ordnern
+**Voraussetzung:**
+- Ordner und Dateien sind auf dem Server freigegeben.
+- Benutzer haben entsprechende Berechtigungen.
+
+**Schritte:**
+1. Ich greife von verschiedenen Clients auf die freigegebenen Ordner und Dateien zu.
+2. Ich überprüfe, ob die Benutzer gemäss ihren Berechtigungen auf die Ressourcen zugreifen können.
+
+**Erwartetes Ergebnis:**
+- Benutzer können auf die freigegebenen Ordner und Dateien zugreifen, gemäss den ihnen zugewiesenen Berechtigungen.
+
+##### Testfall 4: Zugriffsrechte der Benutzer auf freigegebene Ressourcen
+**Voraussetzung:**
+- Benutzerkonten und Berechtigungen sind auf dem Server konfiguriert.
+
+**Schritte:**
+1. Ich überprüfe die Zugriffsrechte der Benutzer auf die freigegebenen Ordner und Dateien.
+2. Ich stelle sicher, dass Benutzer nur auf die Ressourcen zugreifen können, für die sie Berechtigungen haben.
+
+**Erwartetes Ergebnis:**
+- Benutzer können nur auf die freigegebenen Ressourcen zugreifen, für die sie Berechtigungen haben, und alle unberechtigten Zugriffsversuche werden blockiert.
+
+#### 5. Fehlerbehebung
+
+Während des Tests stellte ich fest, dass ein Benutzer keinen Zugriff auf einen freigegebenen Ordner hatte, obwohl ihm die entsprechenden Berechtigungen zugewiesen waren. Nach Überprüfung der Berechtigungseinstellungen stellte ich fest, dass die Vererbung der Berechtigungen deaktiviert war. Ich aktivierte die Vererbung und der Benutzer konnte anschliessend auf den freigegebenen Ordner zugreifen.
+
+<hr>
+
+## DNS
+### Testkonzept für den DNS-Server
+
+#### 1. Testziel
+Das Ziel meines Tests besteht darin sicherzustellen, dass der DNS-Server korrekt konfiguriert ist und die DNS-Auflösung innerhalb des Netzwerks einwandfrei funktioniert. Dazu gehört die Überprüfung der Forward Lookup Zone, der Reverse Lookup Zone sowie die Überprüfung von DNS-Einträgen.
+
+#### 2. Testumfang
+Der Test umfasst die Überprüfung der folgenden Punkte:
+- Funktionalität der Forward Lookup Zone
+- Funktionalität der Reverse Lookup Zone
+- Korrektheit der DNS-Einträge
+- DNS-Auflösung von Clients im Netzwerk
+
+#### 3. Testumgebung
+- DNS-Server: Windows Server 2019 mit installierter DNS-Rolle
+- Netzwerk: Lokales Netzwerk mit IP-Bereich 192.168.1.0/24
+- Test-Clients: Mehrere Clients (Laptops, Desktops) im Netzwerk
+- DNS-Zonen: Forward Lookup Zone und Reverse Lookup Zone konfiguriert
+
+#### 4. Testfälle
+
+##### Testfall 1: Überprüfung der Forward Lookup Zone
+**Voraussetzung:**
+- Die Forward Lookup Zone ist auf dem DNS-Server konfiguriert.
+
+**Schritte:**
+1. Ich öffne die DNS-Manager-Konsole auf dem DNS-Server.
+2. Ich navigiere zur Forward Lookup Zone und überprüfe die dort konfigurierten DNS-Einträge.
+
+**Erwartetes Ergebnis:**
+- Die Forward Lookup Zone enthält die korrekten DNS-Einträge für die Server und Geräte im Netzwerk.
+
+##### Testfall 2: Überprüfung der Reverse Lookup Zone
+**Voraussetzung:**
+- Die Reverse Lookup Zone ist auf dem DNS-Server konfiguriert.
+
+**Schritte:**
+1. Ich öffne die DNS-Manager-Konsole auf dem DNS-Server.
+2. Ich navigiere zur Reverse Lookup Zone und überprüfe die dort konfigurierten PTR-Einträge.
+
+**Erwartetes Ergebnis:**
+- Die Reverse Lookup Zone enthält die korrekten PTR-Einträge für die IP-Adressen der Server und Geräte im Netzwerk.
+
+##### Testfall 3: Überprüfung der DNS-Einträge
+**Voraussetzung:**
+- DNS-Einträge sind in den Forward und Reverse Lookup Zonen konfiguriert.
+
+**Schritte:**
+1. Ich überprüfe die DNS-Einträge für spezifische Geräte (Hauptserver, BackupServer, Drucker01, Laptop01 etc...) im DNS-Manager.
+2. Ich stelle sicher, dass die IP-Adressen und Namen korrekt konfiguriert sind.
+
+**Erwartetes Ergebnis:**
+- Die DNS-Einträge sind korrekt konfiguriert und stimmen mit den zugewiesenen IP-Adressen und Namen überein.
+
+##### Testfall 4: DNS-Auflösung von Clients im Netzwerk
+**Voraussetzung:**
+- Clients im Netzwerk sind so konfiguriert, dass sie den DNS-Server für die Namensauflösung verwenden.
+
+**Schritte:**
+1. Ich öffne die Eingabeaufforderung auf einem Client im Netzwerk.
+2. Ich führe den Befehl `nslookup <hostname>` aus, um die DNS-Auflösung zu überprüfen.
+
+**Erwartetes Ergebnis:**
+- Der DNS-Server löst die Hostnamen korrekt in die entsprechenden IP-Adressen auf.
+
+##### Testfall 5: Reverse DNS-Auflösung von Clients im Netzwerk
+**Voraussetzung:**
+- Clients im Netzwerk sind so konfiguriert, dass sie den DNS-Server für die Namensauflösung verwenden.
+
+**Schritte:**
+1. Ich öffne die Eingabeaufforderung auf einem Client im Netzwerk.
+2. Ich führe den Befehl `nslookup 192.168.1.10` aus, um die Reverse DNS-Auflösung zu überprüfen.
+
+**Erwartetes Ergebnis:**
+- Der DNS-Server löst die IP-Adressen korrekt in die entsprechenden Hostnamen auf.
+
+#### 5. Fehlerbehebung
+
+Während des Tests stellte ich fest, dass die Reverse Lookup Zone nicht korrekt funktionierte und keine PTR-Einträge auflöste. Nach Überprüfung der Konfiguration stellte ich fest, dass die Zone nicht korrekt erstellt wurde. Ich habe die Reverse Lookup Zone neu erstellt und die PTR-Einträge hinzugefügt. Anschliessend funktionierte die Reverse DNS-Auflösung einwandfrei.
+
+<hr>
+## DHCP
+### Testkonzept für den DHCP-Server
+
+#### 1. Testziel
+Das Ziel meines Tests besteht darin sicherzustellen, dass der DHCP-Server korrekt konfiguriert ist und die automatische Zuweisung von IP-Adressen an Clients im Netzwerk reibungslos funktioniert. Dazu gehört die Überprüfung der IP-Adressvergabe, der Ausschlüsse, der Reservierungen sowie der DHCP-Optionen.
+
+#### 2. Testumfang
+Der Test umfasst die Überprüfung der folgenden Punkte:
+- Automatische Zuweisung von IP-Adressen
+- Ausschlüsse und Reservierungen
+- Konfiguration der DHCP-Optionen
+- Lease-Dauer
+
+#### 3. Testumgebung
+- DHCP-Server: Windows Server 2019 mit installierter DHCP-Rolle
+- Netzwerk: Lokales Netzwerk mit IP-Bereich 192.168.1.0/24
+- Test-Clients: Mehrere Clients (Laptops, Desktops) im Netzwerk
+
+#### 4. Testfälle
+
+##### Testfall 1: Automatische Zuweisung von IP-Adressen
+**Voraussetzung:**
+- Der DHCP-Server ist konfiguriert und aktiviert.
+
+**Schritte:**
+1. Ich schalte einen Client im Netzwerk ein und stelle sicher, dass dieser so konfiguriert ist, dass er eine IP-Adresse automatisch über DHCP bezieht.
+2. Ich überprüfe die IP-Adresse des Clients nach der Verbindung zum Netzwerk.
+
+**Erwartetes Ergebnis:**
+- Der Client erhält eine IP-Adresse aus dem konfigurierten Bereich (192.168.1.100 - 192.168.1.200).
+
+##### Testfall 2: Überprüfung der Ausschlüsse
+**Voraussetzung:**
+- Bestimmte IP-Adressen sind im DHCP-Server als ausgeschlossen konfiguriert.
+
+**Schritte:**
+1. Ich schalte einen Client im Netzwerk ein und stelle sicher, dass dieser so konfiguriert ist, dass er eine IP-Adresse automatisch über DHCP bezieht.
+2. Ich überprüfe die IP-Adresse des Clients und stelle sicher, dass sie nicht im Bereich der ausgeschlossenen Adressen liegt.
+
+**Erwartetes Ergebnis:**
+- Der Client erhält keine IP-Adresse aus dem Bereich der ausgeschlossenen Adressen.
+
+##### Testfall 3: Überprüfung der Reservierungen
+**Voraussetzung:**
+- Es sind Reservierungen für bestimmte Geräte auf dem DHCP-Server konfiguriert.
+
+**Schritte:**
+1. Ich schalte einen Client mit einer reservierten MAC-Adresse ein und stelle sicher, dass dieser so konfiguriert ist, dass er eine IP-Adresse automatisch über DHCP bezieht.
+2. Ich überprüfe die IP-Adresse des Clients nach der Verbindung zum Netzwerk.
+
+**Erwartetes Ergebnis:**
+- Der Client erhält die für ihn reservierte IP-Adresse.
+
+##### Testfall 4: Überprüfung der DHCP-Optionen
+**Voraussetzung:**
+- DHCP-Optionen (Router, DNS-Server) sind auf dem DHCP-Server konfiguriert.
+
+**Schritte:**
+1. Ich schalte einen Client im Netzwerk ein und stelle sicher, dass dieser so konfiguriert ist, dass er eine IP-Adresse automatisch über DHCP bezieht.
+2. Ich überprüfe die Netzwerkeinstellungen des Clients und stelle sicher, dass die DHCP-Optionen korrekt übernommen wurden.
+
+**Erwartetes Ergebnis:**
+- Der Client erhält die konfigurierten DHCP-Optionen (die IP-Adresse des Routers und die DNS-Server).
+
+##### Testfall 5: Überprüfung der Lease-Dauer
+**Voraussetzung:**
+- Die Lease-Dauer ist auf dem DHCP-Server konfiguriert.
+
+**Schritte:**
+1. Ich überprüfe die Lease-Dauer in den Einstellungen des DHCP-Servers.
+2. Ich stelle sicher, dass die Lease-Dauer den Anforderungen entspricht.
+
+**Erwartetes Ergebnis:**
+- Die Lease-Dauer ist korrekt konfiguriert und wird vom DHCP-Server entsprechend angewendet.
+
+#### 5. Fehlerbehebung
+
+Während des Tests stellte ich fest, dass ein Client keine IP-Adresse erhielt. Nach Überprüfung der DHCP-Server-Konfiguration stellte ich fest, dass die Netzwerkverbindung zum Server unterbrochen war. Nachdem ich die Netzwerkverbindung wiederhergestellt hatte, erhielt der Client erfolgreich eine IP-Adresse vom DHCP-Server.
+
+
+
+
+
