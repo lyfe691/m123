@@ -255,104 +255,143 @@ Im VirtualBox Manager auf "Neu" geklickt, um eine neue virtuelle Maschine zu ers
 **Schritt 1:** Öffnen des Server Managers
 
 Im Server Manager habe ich auf "Add roles and features" geklickt, um die Rolle des DHCP-Servers hinzuzufügen.
+
 ![1](images/dhcp/1.png)
+<hr>
 
 **Schritt 2:** DHCP-Server Rolle auswählen
 
 Ich habe die Rolle "DHCP Server" ausgewählt und installiert.
+
 ![7](images/dhcp/2.png)
+<hr>
 
 **Schritt 3:** DHCP-Manager öffnen
 
 Nach der Installation habe ich im Server Manager auf "Tools" geklickt und dann "DHCP" ausgewählt.
+
 ![6](images/dhcp/3.png)
+<hr>
 
 **Schritt 4:** Neuen Bereich hinzufügen
 
 Im DHCP-Manager habe ich auf "IPv4" rechtsgeklickt und "New Scope..." ausgewählt.
+
 ![2](images/dhcp/4.png)
+<hr>
 
 **Schritt 5:** Bereich benennen
 
 Ich habe den Bereich "Scope1" genannt und eine Beschreibung "1" hinzugefügt.
+
 ![3](images/dhcp/5.png)
+<hr>
 
 **Schritt 6:** IP-Adressbereich festlegen
 
 Ich habe den Start-IP-Bereich auf `192.168.1.100` und den End-IP-Bereich auf `192.168.1.200` festgelegt. Die Subnetzmaske ist `255.255.255.0`.
+
 ![4](images/dhcp/6.png)
+<hr>
 
 **Schritt 7:** Ausschlüsse und Verzögerung
 
 Ich habe keine Ausschlüsse hinzugefügt und die Standardverzögerung beibehalten.
+
 ![5](images/dhcp/7.png)
+<hr>
 
 **Schritt 8:** Lease-Dauer festlegen
 
 Ich habe die Lease-Dauer auf 8 Tage eingestellt.
 ![10](images/dhcp/8.png)
+<hr>
 
 **Schritt 9:** DHCP-Optionen konfigurieren
 
 Ich habe ausgewählt, dass ich die DHCP-Optionen jetzt konfigurieren möchte.
+
 ![8](images/dhcp/9.png)
+<hr>
 
 **Schritt 10:** Standard-Gateway konfigurieren
 
 Ich habe die IP-Adresse des Routers als `192.168.1.1` hinzugefügt.
+
 ![9](images/dhcp/10.png)
+<hr>
 
 **Schritt 11:** DNS-Server konfigurieren
 
 Ich habe `192.168.1.10` und `8.8.8.8` als DNS-Server hinzugefügt.
+
 ![11](images/dhcp/11.png)
+<hr>
 
 **Schritt 12:** WINS-Server konfigurieren
 
 Ich habe keine WINS-Server hinzugefügt.
+
 ![12](images/dhcp/12.png)
+<hr>
 
 **Schritt 13:** Bereich aktivieren
 
 Ich habe ausgewählt, dass der Bereich jetzt aktiviert wird.
+
 ![13](images/dhcp/13.png)
+<hr>
 
 **Schritt 14:** Assistent beenden
 
 Ich habe den Assistenten gefinished.
+
 ![14](images/dhcp/14.png)
+<hr>
 
 #### Ausschlüsse und Reservierungen
 
 **Schritt 1:** Neue Reservierung hinzufügen
 
 Im DHCP-Manager habe ich auf "Reservations" rechtsgeklickt und "New Reservation..." ausgewählt.
+
 ![15](images/dhcp/15.png)
+<hr>
 
 **Schritt 2:** Reservierung für Laptop01
 
 Ich habe eine Reservierung für `Laptop01` mit der IP-Adresse `192.168.1.100` und der MAC-Adresse `90:5b:cd:69:7b:c2` erstellt. Beschreibung: `Benutzer01 - Jason Bichsel`.
+
 ![16](images/dhcp/16.png)
+<hr>
 
 **Schritt 3:** Reservierung für Laptop02
 
 Ich habe eine Reservierung für `Laptop02` mit der IP-Adresse `192.168.1.101` und der MAC-Adresse `ab:12:14:56:00:36` erstellt. Beschreibung: `Benutzer02 - Benicio Von Felten`.
+
 ![17](images/dhcp/17.png)
+<hr>
 
 **Schritt 4:** Reservierung für Laptop03
 
 Ich habe eine Reservierung für `Laptop03` mit der IP-Adresse `192.168.1.102` und der MAC-Adresse `5c:e:3:59:1e:b0:62` erstellt. Beschreibung: `Benutzer03 - Dominik Koenitzer`.
+
 ![18](images/dhcp/18.png)
+<hr>
 
 **Schritt 5:** Reservierung für Laptop04
 
 Ich habe eine Reservierung für `Laptop04` mit der IP-Adresse `192.168.1.103` und der MAC-Adresse `77:1e:17:03:ca:5b` erstellt. Beschreibung: `Benutzer04 - Perret Pascal`.
+
 ![19](images/dhcp/19.png)
+<hr>
 
 **Schritt 6:** Reservierung für Laptop05
 
 Ich habe eine Reservierung für `Laptop05` mit der IP-Adresse `192.168.1.104` und der MAC-Adresse `16:79:be:6e:70:60` erstellt. Beschreibung: `Benutzer05 - Amza Fatlum`.
+
 ![20](images/dhcp/20.png)
+<hr>
 
 
   
