@@ -41,7 +41,14 @@
 
 
 ## Einführung
-- Kurze Beschreibung des Projekts und der Ziele
+
+In diesem Projekt wird eine IT-Infrastruktur für eine kleine Organisation aufgebaut. Die Hauptziele sind:
+
+- Einrichtung eines Windows Server 2019 in einer virtuellen Maschine
+- Konfiguration von DHCP, DNS, IIS, Druck- und Dateidiensten
+- Sicherstellung der Netzwerksicherheit und Zugriffsrechte
+- Dokumentation der Konfigurationsschritte und Durchführung von Tests
+
 ## Planung
 ### Netzwerkplan
 ![netzwerkdiagram](images/Netzwerkdiagram.drawio.png)
