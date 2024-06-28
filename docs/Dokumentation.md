@@ -1,7 +1,7 @@
 # Fallstudie WISS Modul 123
-Yanis Sebastian Zuercher & Dominik Koenitzer
 
-26.06.24
+- Yanis Sebastian Zuercher & Dominik Koenitzer
+- 26.06.24
 
 ## Inhaltsverzeichnis
 - Übersicht der Kapitel und Seitenzahlen
@@ -568,14 +568,160 @@ Hier ist die Übersicht der erstellten DNS-Einträge:
 
 
   
-- **Datei- und Druckdienste:**
-  - Installationsschritte mit Screenshots
-  - Konfiguration der Freigaben
-  - Installation und Konfiguration des Druckers
-  - Tests und Ergebnisse
+## Datei- und Druckdienste
+
+**Schritt 1:** Öffnen des Server Managers
+
+Im Server Manager habe ich auf "Add roles and features" geklickt. Und alle Schritte gemacht um print and document services herunterzuladen und file and storage services herunterzuladen
+
+![img](images/druck-datei-freigaben/1.png)
+
+![img](images/druck-datei-freigaben/2.png)
+
+![img](images/druck-datei-freigaben/3.png)
+
+![img](images/druck-datei-freigaben/4.png)
+
+![img](images/druck-datei-freigaben/5.png)
+
+![img](images/druck-datei-freigaben/6.png)
+
+![img](images/druck-datei-freigaben/7.png)
+
+<hr>
+
+**Schritt 2:** Printer aufsetzewn
+
+![img](images/druck-datei-freigaben/8.png)
+
+![img](images/druck-datei-freigaben/9.png)
+
+![img](images/druck-datei-freigaben/10.png)
+
+![img](images/druck-datei-freigaben/11.png)
+
+![img](images/druck-datei-freigaben/12.png)
+
+![img](images/druck-datei-freigaben/13.png)
+
+![img](images/druck-datei-freigaben/14.png)
+
+![img](images/druck-datei-freigaben/15.png)
+
+![img](images/druck-datei-freigaben/16.png)
+
+![img](images/druck-datei-freigaben/17.png)
+
+![img](images/druck-datei-freigaben/18.png)
+
+![img](images/druck-datei-freigaben/19.png)
+
+<hr>
+
+**Schritt 3:** File and Storage services
+
+![img](images/druck-datei-freigaben/20.png)
+
+![img](images/druck-datei-freigaben/21.png)
+
+![img](images/druck-datei-freigaben/22.png)
+
+![img](images/druck-datei-freigaben/23.png)
+
+![img](images/druck-datei-freigaben/24.png)
+
+![img](images/druck-datei-freigaben/25.png)
+
+![img](images/druck-datei-freigaben/26.png)
+<hr>
+
+**Zwischen-Schritt 3.5:** benutzer einrichten wie in der tabelle
+
+![img](images/druck-datei-freigaben/27.png)
+
+![img](images/druck-datei-freigaben/28.png)
+
+![img](images/druck-datei-freigaben/29.png)
+
+![img](images/druck-datei-freigaben/30.png)
+
+###### Showcase der benutzer:
+![img](images/druck-datei-freigaben/31.png)
+
+**Weiter mit Schritt 3:** File and Storage services
+![img](images/druck-datei-freigaben/32.png)
+
+![img](images/druck-datei-freigaben/33.png)
+
+![img](images/druck-datei-freigaben/34.png)
+
+![img](images/druck-datei-freigaben/35.png)
+
+![img](images/druck-datei-freigaben/36.png)
+
+![img](images/druck-datei-freigaben/37.png)
+
+![img](images/druck-datei-freigaben/38.png)
+
+![img](images/druck-datei-freigaben/39.png)
+
+![img](images/druck-datei-freigaben/40.png)
+
+![img](images/druck-datei-freigaben/41.png)
+
+![img](images/druck-datei-freigaben/42.png)
+
+![img](images/druck-datei-freigaben/43.png)
+
+![img](images/druck-datei-freigaben/44.png)
+
+![img](images/druck-datei-freigaben/45.png)
+
+![img](images/druck-datei-freigaben/46.png)
+
+![img](images/druck-datei-freigaben/47.png)
+
+![img](images/druck-datei-freigaben/48.png)
+
+<hr>
   
-- **Webserver (IIS):**
-  -Installationsschritte mit Screenshots
-  - Erstellen und Konfigurieren der Webseite
-  - Aktivierung von HTTPS und Installation des Zertifikats
-  - Tests und Ergebnisse
+## Webinstallation (IIS)
+
+#### Installationsschritte:
+**Schritt 1:** IIS installieren
+![img](images/IIS/1.png)
+
+![img](images/IIS/2.png)
+
+![img](images/IIS/3.png)
+
+![img](images/IIS/4.png)
+
+![img](images/IIS/5.png)
+<hr>
+
+**Schritt 2:** IIS aufsetzen
+
+![img](images/IIS/6.png)
+
+![img](images/IIS/7.png)
+
+![img](images/IIS/8.png)
+
+![img](images/IIS/9.png)
+
+![img](images/IIS/10.png)
+
+**Schritt 3:** Certificate
+
+![img](images/IIS/11.png)
+
+![img](images/IIS/12.png)
+
+![img](images/IIS/13.png)
+
+![img](images/IIS/14.png)
+
+**Showcase:**
+![img](images/IIS/15.png)
+![img](images/IIS/16.png)
