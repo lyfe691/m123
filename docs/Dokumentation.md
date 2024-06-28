@@ -1003,7 +1003,7 @@ Der Test umfasst die Überprüfung der folgenden Punkte:
 
 **Schritte:**
 1. Ich öffne die Eingabeaufforderung auf einem Client im Netzwerk.
-2. Ich führe den Befehl `nslookup <hostname>` aus, um die DNS-Auflösung zu überprüfen.
+2. Ich führe den Befehl `nslookup WIN-43UFNKLROM8` aus, um die DNS-Auflösung zu überprüfen.
 
 **Erwartetes Ergebnis:**
 - Der DNS-Server löst die Hostnamen korrekt in die entsprechenden IP-Adressen auf.
